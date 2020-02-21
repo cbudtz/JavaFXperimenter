@@ -7,12 +7,16 @@ import javafx.stage.Stage;
 public class HelloFX extends Application {
 
     @Override
-    public void start(Stage stage) throws Exception {
-        String version = System.getProperty("javafx.version");
-        Label label = new Label("Hello from JavaFX: " + version);
-        Scene scene = new Scene(new StackPane(label), 640,480);
+    public void start(Stage stage) {
+        String javafxVersion = System.getProperty("javafx.version");
+        Label l = new Label("Hello, JavaFX " + javafxVersion);
+        Scene scene = new Scene(new StackPane(l), 640, 480);
         stage.setScene(scene);
         stage.show();
-
     }
+
+    public static void main(String[] args) {
+        launch();
+    }
+
 }
