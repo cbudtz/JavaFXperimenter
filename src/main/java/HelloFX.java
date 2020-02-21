@@ -1,16 +1,29 @@
 import javafx.application.Application;
+import javafx.event.EventHandler;
+import javafx.geometry.Orientation;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 
 public class HelloFX extends Application {
 
     @Override
     public void start(Stage stage) {
-        String javafxVersion = System.getProperty("javafx.version");
-        Label l = new Label("Hello, JavaFX " + javafxVersion);
-        Scene scene = new Scene(new StackPane(l), 640, 480);
+        Label l = new Label("Hello, JavaFX!");
+        Button button = new Button("Push me!");
+        button.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+              l.setText("Du trykkede på knappen!");
+            }
+        });
+        FlowPane flowPane = new FlowPane(Orientation.VERTICAL);
+        flowPane.getChildren().add(l);
+        flowPane.getChildren().add(button);
+        Scene scene = new Scene(flowPane,640,480);
         stage.setScene(scene);
         stage.show();
     }
