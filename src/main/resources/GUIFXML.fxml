@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<FlowPane orientation="VERTICAL" xmlns="http://javafx.com/javafx">
+<FlowPane fx:controller="GuiController" orientation="VERTICAL" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
         <Label>Hello world!</Label>
-        <Label>Its a Fine day!</Label>
+        <Label fx:id="label">Its a Fine day!</Label>
+        <Button  onMouseClicked="#buttonClicked">Push Me!</Button>
 </FlowPane>
