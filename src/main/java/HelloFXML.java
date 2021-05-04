@@ -14,7 +14,9 @@ public class HelloFXML extends Application {
         stage.setScene(new Scene(anchorPane,640,480));
         stage.show();
     }
-    public static void main(String[] args) {
+    public static void run(String[] args) {
+        System.out.println("Running this on its own will fail with JDK 11+ due to JavaFX not being bundled anymore - " +
+                "and required as a module - Run Runner.main(); as a workaround");
         launch();
     }
 
